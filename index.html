@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>3D</title>
+    <link rel="shortcut icon" href="./image/exodia-favicon-black.png" type="image/x-icon">k
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+    <main>
+        <section>
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+        </section>
+        <div class="mouth"></div>
+    </main>
+
+    <span class="sentence">Ola, me chamo Robot</span>
+
+    <script>
+        console.log("IA é o futuro");
+        function rand(){
+            const max = 7;
+            const min = 0;
+            const result = Math.floor(Math.random() * (min + max));
+            console.log(result);
+            return result;
+        }
+
+        const robot = document.querySelector('main')
+        .addEventListener('click', (e) => {
+            const random = rand();
+            const speak = ['O dia esta lindo hoje!', 'Suco de maracujá em um dia quente é uma otima idea!', 'Você é uma linda pessoa', 'Eu sou o robô da Exodia, falo frases aleatorias, hehe', 'Maneva tem musicas muito lindas', 'Eu não consigo fala... Ainda', 'Meu criador é uma pessoa que busca aprendizado, eu sei que ele vai me atualiza logo logo', 'Vamos codar'];
+            
+            const sentence = document.querySelector('.sentence');
+            sentence.innerHTML = speak[random];
+
+            const mouth = document.querySelector('.mouth');
+            if(mouth.classList != 'speak'){
+                mouth.classList.add('speak');
+            }
+
+            setTimeout(() => {
+                mouth.classList.remove('speak');
+            }, 1000)
+
+        })
+
+    </script>
+</body>
+</html>
